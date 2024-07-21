@@ -18,4 +18,5 @@ class Product(Model):
     name = CharField(max_length=50, unique=True)
     description = TextField()
     price = DecimalField(max_digits=10, decimal_places=2)
+    category = ForeignKey(Category, on_delete=CASCADE, related_name='products')
     image = ImageField(upload_to='products/')
